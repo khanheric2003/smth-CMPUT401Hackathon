@@ -10,3 +10,6 @@ def specific(request):
 def article(request, article_id):
     theID = article_id + 1
     return render(request, 'blog/index.html', {"article_id": theID})
+def getResponse(request):
+    userMessage = request.GET.get('userMessage')
+    return HttpResponse(userMessage)
